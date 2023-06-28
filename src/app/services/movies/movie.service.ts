@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap, catchError, throwError } from 'rxjs';
+import {
+  Observable,
+  tap,
+  catchError,
+  throwError,
+  switchMap,
+  mergeMap,
+  take,
+  firstValueFrom,
+} from 'rxjs';
 import { Movie } from 'src/app/models/Movie';
 
 @Injectable({
@@ -14,10 +23,17 @@ export class MovieService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.apiUrl}`);
   }
+  getMovie(movieId: number): Observable<Movie> {
+    const url = `${this.apiUrl}/${movieId}`;
+    return this.http.get<Movie>(url);
+  }
   getMoviesOrderedByUnwatched(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.apiUrl}?_sort=watched&_order=asc`);
   }
-  toggleLikedMovie(movieId: number | undefined, movieLiked: boolean): Observable<Movie> {
+  toggleLikedMovie(
+    movieId: number | undefined,
+    movieLiked: boolean
+  ): Observable<Movie> {
     const url = `${this.apiUrl}/${movieId}`;
 
     return this.http.patch<Movie>(url, { liked: !movieLiked }).pipe(
@@ -28,7 +44,35 @@ export class MovieService {
       })
     );
   }
-  toggleWatchedMovie(movieId: number | undefined, movieWatched: boolean): Observable<Movie> {
+  saveMovieComment(movieId: number, comment: string): any {
+    const url = `${this.apiUrl}/${movieId}`;
+
+    this.getMovie(movieId).subscribe(
+      (movie) => {
+        console.log(`Comentários anteriores: ${movie.comments}`);
+        const updateComments = (movie.comments).concat([comment]);
+        console.log(`Comentários atualizados: ${updateComments}`);
+
+        return this.http.patch<Movie>(url, { comments: updateComments }).subscribe((teste) => {
+          console.log('Comments added!')
+          
+        },
+  (error) => {
+    // Handle error
+    console.error('An error occurred:', error);
+  });
+      },
+      (error) => {
+        // Handle error
+        console.error('An error occurred:', error);
+      }
+    );
+  }
+
+  toggleWatchedMovie(
+    movieId: number | undefined,
+    movieWatched: boolean
+  ): Observable<Movie> {
     const url = `${this.apiUrl}/${movieId}`;
 
     return this.http.patch<Movie>(url, { watched: !movieWatched }).pipe(

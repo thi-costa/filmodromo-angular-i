@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movie';
+import { MovieModalServiceService } from 'src/app/services/movies/movie-modal-service.service';
 import { MovieService } from 'src/app/services/movies/movie.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { MovieService } from 'src/app/services/movies/movie.service';
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(
+    private movieService: MovieService,
+    private movieModalService: MovieModalServiceService
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -27,7 +31,15 @@ export class MovieListComponent implements OnInit {
       .toggleWatchedMovie(movie.id, movie.watched)
       .subscribe((updateMovie) => {
         movie.watched = updateMovie.watched;
+        if(movie.watched){
+          this.movieModalService.openMovieFeedbackModal(movie.id).then(comment => {
+            if(comment){
+              console.log(`User comment: ${comment}`);
+            }
+          })
+        }
       });
+    
   }
 
   toggleLikedMovie(movie: Movie): void{

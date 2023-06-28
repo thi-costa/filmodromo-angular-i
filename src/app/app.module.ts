@@ -13,10 +13,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar"
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { MatListModule } from '@angular/material/list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HomeComponent } from './components/home/home.component'
 import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MovieFeedbackModalComponent } from './components/moviefeedbackmodal/moviefeedbackmodal.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     MovieListComponent,
     PageNotFoundComponent,
     HomeComponent,
+    MovieFeedbackModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,13 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatCardModule,
     MatIconModule,
+    MatDialogModule,
+    MatInputModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],

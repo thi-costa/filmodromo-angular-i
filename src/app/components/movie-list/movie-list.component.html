@@ -32,9 +32,9 @@
     <mat-icon class="liked-icon clickable-icon" (click)="toggleLikedMovie(movie)" [ngClass]="{ 'liked': movie.liked, 'unliked': !movie.liked }">
       {{ movie.liked ? 'thumb_up' : 'thumb_down' }}
     </mat-icon>
-    <div class="comments">
+    <!-- <div class="comments">
       <span *ngFor="let comment of movie.comments">{{ comment }}</span>
-    </div>
+    </div> -->
   </mat-card-content>
   <mat-card-actions>
     <!-- Add other actions as needed -->
