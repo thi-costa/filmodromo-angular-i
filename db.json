@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "name": "Filme 2",
+      "synopsis": "Sinopse",
+      "watched": true,
+      "liked": true,
+      "comments": [],
+      "id": 3
+    },
+    {
+      "name": "Filme 3",
+      "synopsis": "Sinopse 3",
+      "watched": false,
+      "liked": true,
+      "comments": [],
+      "id": 4
+    },
+    {
+      "name": "Filme 1",
+      "synopsis": "Sinopse 1",
+      "watched": true,
+      "liked": false,
+      "comments": [],
+      "id": 6
+    }
+  ]
+}

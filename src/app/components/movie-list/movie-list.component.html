@@ -1,0 +1,42 @@
+<!-- <div class="main-content">
+  <h2 class="mat-h2">Lista de Filmes</h2>
+
+  <div class="movies-container">
+    <mat-card *ngFor="let movie of movies" class="movie-card">
+      <mat-card-header>
+        <mat-card-title>{{ movie.name }}</mat-card-title>
+        <button mat-icon-button color="warn" (click)="deleteMovie(movie)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ movie.synopsis }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> -->
+<mat-card *ngFor="let movie of movies" class="movie-card">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon class="watched-icon" (click)="toggleWatchedMovie(movie)" [ngClass]="{ 'watched': movie.watched, 'unwatched': !movie.watched }">
+        {{ movie.watched ? 'done' : 'visibility_off' }}
+      </mat-icon>
+    </div>
+    <mat-card-title>{{ movie.name }}</mat-card-title>
+    <button mat-icon-button color="warn" (click)="deleteMovie(movie)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <mat-card-subtitle>{{ movie.synopsis }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-icon class="liked-icon clickable-icon" (click)="toggleLikedMovie(movie)" [ngClass]="{ 'liked': movie.liked, 'unliked': !movie.liked }">
+      {{ movie.liked ? 'thumb_up' : 'thumb_down' }}
+    </mat-icon>
+    <div class="comments">
+      <span *ngFor="let comment of movie.comments">{{ comment }}</span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- Add other actions as needed -->
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,30 @@
+<!-- movie-registration-form.component.html -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Adicionar filme</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Informações do filme</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Nome do filme</mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Sinopse do filme</mat-label>
+          <textarea matInput formControlName="synopsis" required></textarea>
+        </mat-form-field>
+      </form>
+    </mat-expansion-panel>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Adicionar</button>
+  </mat-card-actions>
+</mat-card>

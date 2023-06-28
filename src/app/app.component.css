@@ -1,0 +1,32 @@
+.custom-navbar {
+  background-color: blue;
+  color: white;
+}
+
+.custom-navbar .app-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar-links {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  margin-right: 10px;
+}
+
+.navbar-spacer {
+  flex: 1;
+}
+
+.navbar-link {
+  color: #fff; /* White text color */
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: #1976d2; /* Blue text color on hover */
+}

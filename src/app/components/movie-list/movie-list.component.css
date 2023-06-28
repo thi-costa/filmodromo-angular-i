@@ -1,0 +1,46 @@
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.movie-card {
+  margin: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.watched-icon,
+.liked-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+.clickable-icon{
+  cursor: pointer;
+
+}
+
+.watched-icon.watched {
+  color: green;
+}
+
+.watched-icon.unwatched {
+  color: red;
+}
+
+.liked-icon.liked {
+  color: blue;
+}
+
+.liked-icon.unliked {
+  color: gray;
+}
+
+.comments {
+  margin-top: 8px;
+}
+
+.comments span {
+  display: inline-block;
+  margin-right: 8px;
+}

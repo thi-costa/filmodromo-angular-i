@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="custom-navbar">
+  <mat-toolbar-row>
+    <span class="app-title">Catálogo de Filmes</span>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="navbar-links">
+    <a mat-button class="navbar-link" routerLink="/">Home</a>
+    <a mat-button class="navbar-link" routerLink="/movies/new">Novo Filme</a>
+    <a mat-button class="navbar-link" routerLink="/about">Pesquisar Filme</a>
+    <a mat-button class="navbar-link" routerLink="/movies/liked">Lista de filmes</a>
+    <!-- Add more links as needed -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
