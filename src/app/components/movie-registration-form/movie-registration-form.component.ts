@@ -20,6 +20,7 @@ export class MovieRegistrationFormComponent implements OnInit {
     this.movieForm = this.formBuilder.group({
       name: ['', Validators.required],
       synopsis: ['', Validators.required],
+      backgroundImage: ['', Validators.required],
     });
   }
 
@@ -31,6 +32,7 @@ export class MovieRegistrationFormComponent implements OnInit {
     const newMovie: Movie = {
       name: this.movieForm.value.name,
       synopsis: this.movieForm.value.synopsis,
+      backgroundImage: this.movieForm.value.backgroundImage,
       watched: false,
       liked: false,
       comments: [],
