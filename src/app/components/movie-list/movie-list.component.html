@@ -1,27 +1,27 @@
 <!-- <div class="movies-container"> -->
-  <mat-card *ngFor="let movie of movies" class="movie-card" (click)="openMovieDetails(movie.id)">
+  <mat-card *ngFor="let movie of movies" class="movie-card" (click)="openMovieDetails(movie.id)" style="width: auto;">
     <mat-card-header>
-      <mat-card-title-group>
-        <img style="width: 300px;" src={{movie.backgroundImage}}>
-      </mat-card-title-group>
+      <mat-card-title class="movie-title">{{ movie.name }}</mat-card-title>
+      <!-- <mat-card-title-group> -->
+      <!-- </mat-card-title-group> -->
       <div mat-card-avatar>
         <mat-icon class="watched-icon" (click)="toggleWatchedMovie(movie)" [ngClass]="{ 'watched': movie.watched, 'unwatched': !movie.watched }">
           {{ movie.watched ? 'done' : 'visibility_off' }}
         </mat-icon>
       </div>
-      <mat-card-title class="movie-title">{{ movie.name }}</mat-card-title>
-      <button mat-icon-button color="warn" (click)="deleteMovie(movie)">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <mat-card-subtitle>{{ movie.synopsis }}</mat-card-subtitle>
+      <!-- <mat-card-subtitle></mat-card-subtitle> -->
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content style="display: flex; align-items: center;">
+      <img style="width: 300px; margin-right: 20px;" src={{movie.backgroundImage}}>
+      <p>{{ movie.synopsis }}</p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: space-between;">
       <mat-icon class="liked-icon clickable-icon" (click)="toggleLikedMovie(movie)" [ngClass]="{ 'liked': movie.liked, 'unliked': !movie.liked }">
         {{ movie.liked ? 'thumb_up' : 'thumb_down' }}
       </mat-icon>
-    </mat-card-content>
-    <mat-card-actions>
-      <!-- Add other actions as needed -->
-    </mat-card-actions>
+      <button mat-icon-button color="warn" (click)="deleteMovie(movie)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      </mat-card-actions>
   </mat-card>
 <!-- </div> -->
