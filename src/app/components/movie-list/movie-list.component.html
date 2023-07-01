@@ -17,6 +17,9 @@
 </div> -->
 <mat-card *ngFor="let movie of movies" class="movie-card">
   <mat-card-header>
+    <mat-card-title-group>
+      <img style="width: 300px;" src={{movie.backgroundImage}}>
+    </mat-card-title-group>
     <div mat-card-avatar>
       <mat-icon class="watched-icon" (click)="toggleWatchedMovie(movie)" [ngClass]="{ 'watched': movie.watched, 'unwatched': !movie.watched }">
         {{ movie.watched ? 'done' : 'visibility_off' }}

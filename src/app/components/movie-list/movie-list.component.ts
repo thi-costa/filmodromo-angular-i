@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/Movie';
 import { MovieModalServiceService } from 'src/app/services/movies/movie-modal-service.service';
 import { MovieService } from 'src/app/services/movies/movie.service';
@@ -25,24 +25,30 @@ export class MovieListComponent implements OnInit {
       this.movies = movies;
     });
   }
+  getMoviesLiked(): void {
+    this.movieService.getMoviesOrderedByUnwatched().subscribe((movies) => {
+      this.movies = movies;
+    });
+  }
 
-  toggleWatchedMovie(movie: Movie): void{
+  toggleWatchedMovie(movie: Movie): void {
     this.movieService
       .toggleWatchedMovie(movie.id, movie.watched)
       .subscribe((updateMovie) => {
         movie.watched = updateMovie.watched;
-        if(movie.watched){
-          this.movieModalService.openMovieFeedbackModal(movie.id).then(comment => {
-            if(comment){
-              console.log(`User comment: ${comment}`);
-            }
-          })
+        if (movie.watched) {
+          this.movieModalService
+            .openMovieFeedbackModal(movie.id)
+            .then((comment) => {
+              if (comment) {
+                console.log(`User comment: ${comment}`);
+              }
+            });
         }
       });
-    
   }
 
-  toggleLikedMovie(movie: Movie): void{
+  toggleLikedMovie(movie: Movie): void {
     this.movieService
       .toggleLikedMovie(movie.id, movie.liked)
       .subscribe((updateMovie) => {

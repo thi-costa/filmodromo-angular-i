@@ -30,6 +30,9 @@ export class MovieService {
   getMoviesOrderedByUnwatched(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.apiUrl}?_sort=watched&_order=asc`);
   }
+  getMoviesLiked(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiUrl}?liked=true`);
+  }
   toggleLikedMovie(
     movieId: number | undefined,
     movieLiked: boolean
