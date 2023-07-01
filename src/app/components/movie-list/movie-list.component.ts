@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/models/Movie';
 import { MovieModalServiceService } from 'src/app/services/movies/movie-modal-service.service';
 import { MovieService } from 'src/app/services/movies/movie.service';
@@ -9,6 +10,7 @@ import { MovieService } from 'src/app/services/movies/movie.service';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
+  @Input() liked: boolean = false;
   movies: Movie[] = [];
 
   constructor(
@@ -21,12 +23,16 @@ export class MovieListComponent implements OnInit {
   }
 
   getMovies(): void {
-    this.movieService.getMoviesOrderedByUnwatched().subscribe((movies) => {
-      this.movies = movies;
-    });
+    if (this.liked) {
+      this.getMoviesLiked();
+    } else {
+      this.movieService.getMoviesOrderedByUnwatched().subscribe((movies) => {
+        this.movies = movies;
+      });
+    }
   }
   getMoviesLiked(): void {
-    this.movieService.getMoviesOrderedByUnwatched().subscribe((movies) => {
+    this.movieService.getMoviesLiked().subscribe((movies) => {
       this.movies = movies;
     });
   }
