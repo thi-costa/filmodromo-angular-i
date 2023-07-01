@@ -6,11 +6,14 @@ import { MovieService } from 'src/app/services/movies/movie.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 @Component({
-  selector: 'app-movie-details',
-  templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css'],
+  selector: 'app-movie-comments',
+  templateUrl: './movie-comments.component.html',
+  styleUrls: ['./movie-comments.component.css'],
+  standalone: true,
+  imports: [MatExpansionModule],
 })
-export class MovieDetailsComponent implements OnInit {
+
+export class MovieCommentsComponent implements OnInit{
   panelOpenState = false;
   movieId: number | null =
     Number(this.route.snapshot.paramMap.get('id')) ?? null;

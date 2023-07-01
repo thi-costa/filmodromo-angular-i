@@ -25,6 +25,8 @@ import { MovieFeedbackModalComponent } from './components/moviefeedbackmodal/mov
 import { MatInputModule } from '@angular/material/input';
 import { MovieLikedListComponent } from './components/movie-liked-list/movie-liked-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieCommentsComponent } from './components/movie-comments/movie-comments.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatExpansionModule,
+    MovieCommentsComponent,
   ],
   providers: [MovieService],
   bootstrap: [AppComponent],

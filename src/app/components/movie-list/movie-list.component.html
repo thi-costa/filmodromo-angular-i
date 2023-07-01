@@ -1,7 +1,7 @@
 <!-- <div class="movies-container"> -->
   <mat-card *ngFor="let movie of movies" class="movie-card" (click)="openMovieDetails(movie.id)" style="width: auto;">
     <mat-card-header>
-      <mat-card-title class="movie-title">{{ movie.name }}</mat-card-title>
+      <mat-card-title class="movie-title"><strong>{{ movie.name }}</strong></mat-card-title>
       <!-- <mat-card-title-group> -->
       <!-- </mat-card-title-group> -->
       <div mat-card-avatar>
