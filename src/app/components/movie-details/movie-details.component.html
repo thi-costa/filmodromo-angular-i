@@ -1,1 +1,10 @@
-<p>movie-details works!</p>
+<mat-card *ngIf="movie" class="movie-card">
+  <mat-card-header>
+    <mat-card-title>{{ movie.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="movie.backgroundImage" alt="Movie cover">
+  <mat-card-content>
+    <p><strong>Sinopse:</strong> {{ movie.synopsis }}</p>
+    <p><strong>Comentários:</strong> {{ movie.comments }}</p>
+  </mat-card-content>
+</mat-card>

@@ -27,6 +27,9 @@ export class MovieService {
     const url = `${this.apiUrl}/${movieId}`;
     return this.http.get<Movie>(url);
   }
+  getMovieById(id: number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.apiUrl}/${id}`);
+  }
   getMoviesOrderedByUnwatched(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.apiUrl}?_sort=watched&_order=asc`);
   }

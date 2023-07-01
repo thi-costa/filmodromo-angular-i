@@ -31,9 +31,12 @@
       "name": "Ela",
       "synopsis": "Num futuro próximo, um solitário escritor tem uma relação pouco comum com um sistema operacional destinado a atender todas as suas necessidades.",
       "backgroundImage": "https://br.web.img2.acsta.net/pictures/13/12/19/22/18/242683.jpg",
-      "watched": false,
+      "watched": true,
       "liked": false,
-      "comments": [],
+      "comments": [
+        "Teste",
+        "Testando"
+      ],
       "id": 10
     },
     {
