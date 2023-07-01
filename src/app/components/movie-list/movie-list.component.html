@@ -1,5 +1,5 @@
 <!-- <div class="movies-container"> -->
-  <mat-card *ngFor="let movie of movies" class="movie-card">
+  <mat-card *ngFor="let movie of movies" class="movie-card" (click)="openMovieDetails(movie.id)">
     <mat-card-header>
       <mat-card-title-group>
         <img style="width: 300px;" src={{movie.backgroundImage}}>
@@ -9,7 +9,7 @@
           {{ movie.watched ? 'done' : 'visibility_off' }}
         </mat-icon>
       </div>
-      <mat-card-title>{{ movie.name }}</mat-card-title>
+      <mat-card-title class="movie-title">{{ movie.name }}</mat-card-title>
       <button mat-icon-button color="warn" (click)="deleteMovie(movie)">
         <mat-icon>delete</mat-icon>
       </button>

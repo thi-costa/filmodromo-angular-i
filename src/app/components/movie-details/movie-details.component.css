@@ -1,0 +1,28 @@
+.movie-card {
+  width: 400px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+mat-card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+mat-card-content {
+  margin-top: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}

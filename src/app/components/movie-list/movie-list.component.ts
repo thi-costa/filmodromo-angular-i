@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from 'src/app/models/Movie';
 import { MovieModalServiceService } from 'src/app/services/movies/movie-modal-service.service';
 import { MovieService } from 'src/app/services/movies/movie.service';
@@ -15,7 +15,8 @@ export class MovieListComponent implements OnInit {
 
   constructor(
     private movieService: MovieService,
-    private movieModalService: MovieModalServiceService
+    private movieModalService: MovieModalServiceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +61,10 @@ export class MovieListComponent implements OnInit {
       .subscribe((updateMovie) => {
         movie.liked = updateMovie.liked;
       });
+  }
+
+  openMovieDetails(movieId: number | undefined): void {
+    this.router.navigate(['/movies', movieId]);
   }
 
   deleteMovie(movie: Movie): void {
