@@ -4,7 +4,7 @@
       "name": "O jogo da imitação",
       "synopsis": "Durante a segunda guerra mundial, um inglês gênio da matemática tenta decifrar o código alemão Enigma com a ajuda de seus colegas.",
       "watched": true,
-      "liked": false,
+      "liked": true,
       "comments": [
         "Teste",
         "Teste2",
@@ -21,20 +21,29 @@
       "synopsis": "Mark Zuckerberg, estudante de Harvard, decide trabalhar na ideia de \numa rede de relacionamento dentro do campus. Seis anos e 500 milhões\nde amigos depois, ele se torna um jovem bilionário, um dos homens mais\n poderosos do planeta. Todavia, o sucesso do Facebook lhe acarreta \ncomplicações na vida social e amorosa.",
       "backgroundImage": "https://f001.backblazeb2.com/file/papocine/2011/11/20200203-poster.jpg",
       "watched": true,
-      "liked": false,
+      "liked": true,
       "comments": [
         "Testando"
       ],
       "id": 8
     },
     {
+      "name": "Ela",
+      "synopsis": "Num futuro próximo, um solitário escritor tem uma relação pouco comum com um sistema operacional destinado a atender todas as suas necessidades.",
+      "backgroundImage": "https://br.web.img2.acsta.net/pictures/13/12/19/22/18/242683.jpg",
+      "watched": false,
+      "liked": false,
+      "comments": [],
+      "id": 10
+    },
+    {
       "name": "Hacker",
-      "synopsis": "Começamos bem, um enredo clássico de hackers, o filme de mesmo nome\nconta a história de um antigo cibercriminoso que atualmente está \ncumprindo pena em uma prisão. E o que tem de interessante nisso? \nEm troca da sua liberdade, especialistas americanos e chineses \noferecem uma verdadeira caçada a outro terrorista virtual.",
+      "synopsis": "Começamos bem, um enredo clássico de hackers, o filme de mesmo nome conta a história de um antigo cibercriminoso que atualmente está cumprindo pena em uma prisão. E o que tem de interessante nisso? Em troca da sua liberdade, especialistas americanos e chineses oferecem uma verdadeira caçada a outro terrorista virtual.",
       "backgroundImage": "https://br.web.img3.acsta.net/c_310_420/pictures/15/01/07/22/40/319755.jpg",
       "watched": false,
       "liked": false,
       "comments": [],
-      "id": 9
+      "id": 11
     }
   ]
 }

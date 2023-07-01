@@ -23,6 +23,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MovieFeedbackModalComponent } from './components/moviefeedbackmodal/moviefeedbackmodal.component';
 import { MatInputModule } from '@angular/material/input';
+import { MovieLikedListComponent } from './components/movie-liked-list/movie-liked-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MatInputModule } from '@angular/material/input';
     PageNotFoundComponent,
     HomeComponent,
     MovieFeedbackModalComponent,
+    MovieLikedListComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
