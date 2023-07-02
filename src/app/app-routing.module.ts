@@ -14,19 +14,19 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'movies/:id',
-    component: MovieDetailsComponent
+    path: 'movies/new',
+    loadChildren: () =>
+      import(
+        './modules/movies/movie-registration/movie-registration.module'
+      ).then((m) => m.MovieRegistrationModule),
   },
   {
     path: 'movies/liked',
     component: MovieLikedListComponent,
   },
   {
-    path: 'movies/new',
-    loadChildren: () =>
-      import(
-        './modules/movies/movie-registration/movie-registration.module'
-      ).then((m) => m.MovieRegistrationModule),
+    path: 'movies/:id',
+    component: MovieDetailsComponent,
   },
   {
     path: '**',
