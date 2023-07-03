@@ -1,10 +1,30 @@
-<mat-card *ngIf="movie" class="movie-card">
+<!-- <app-movie-comments></app-movie-comments> -->
+
+<mat-card *ngIf="movie" class="movie-card" style="width: auto;">
   <mat-card-header>
     <mat-card-title>{{ movie.name }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="movie.backgroundImage" alt="Movie cover">
-  <mat-card-content>
-    <p><strong>Sinopse:</strong> {{ movie.synopsis }}</p>
-    <p><strong>Comentários:</strong> {{ movie.comments }}</p>
+  <mat-card-content style="display: flex; align-items: center;">
+    <img style="width: 300px; margin-right: 20px;" src={{movie.backgroundImage}}>
+    <div><p><strong>Sinopse:</strong> {{ movie.synopsis }}</p>
+    <!-- <p><strong>Comentários:</strong></p> -->
+    <!-- <ul>
+      <li *ngFor="let comment of movie.comments">{{ comment }}</li>
+    </ul> -->
+    <mat-accordion>
+      <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Comentários
+          </mat-panel-title>
+          <mat-panel-description>
+            Toque para {{panelOpenState ? 'fechar' : 'expandir'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p *ngFor="let comment of movie.comments">{{ comment }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
   </mat-card-content>
 </mat-card>
