@@ -27,6 +27,7 @@ import { MovieLikedListComponent } from './components/movie-liked-list/movie-lik
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { MovieCommentsComponent } from './components/movie-comments/movie-comments.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MovieFeedbackModalComponent,
     MovieLikedListComponent,
     MovieDetailsComponent,
+    MovieSearchComponent,
   ],
   imports: [
     BrowserModule,

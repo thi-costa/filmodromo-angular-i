@@ -36,6 +36,9 @@ export class MovieService {
   getMoviesLiked(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.apiUrl}?liked=true`);
   }
+  searchMovies(query: String): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.apiUrl}?name_like=${query}`);
+  }
   toggleLikedMovie(
     movieId: number | undefined,
     movieLiked: boolean
@@ -56,17 +59,20 @@ export class MovieService {
     this.getMovie(movieId).subscribe(
       (movie) => {
         console.log(`Comentários anteriores: ${movie.comments}`);
-        const updateComments = (movie.comments).concat([comment]);
+        const updateComments = movie.comments.concat([comment]);
         console.log(`Comentários atualizados: ${updateComments}`);
 
-        return this.http.patch<Movie>(url, { comments: updateComments }).subscribe((teste) => {
-          console.log('Comments added!')
-          
-        },
-  (error) => {
-    // Handle error
-    console.error('An error occurred:', error);
-  });
+        return this.http
+          .patch<Movie>(url, { comments: updateComments })
+          .subscribe(
+            (teste) => {
+              console.log('Comments added!');
+            },
+            (error) => {
+              // Handle error
+              console.error('An error occurred:', error);
+            }
+          );
       },
       (error) => {
         // Handle error
