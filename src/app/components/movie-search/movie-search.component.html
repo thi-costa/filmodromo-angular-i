@@ -1,0 +1,26 @@
+<div class="search-container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="searchTerm" placeholder="Buscar pelo nome" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Pesquisar</button>
+</div>
+
+<div class="search-results" *ngIf="searchResults.length > 0">
+  <h3>Resultados da busca:</h3>
+  <mat-card *ngFor="let movie of searchResults" class="movie-card" style="width: auto;">
+    <mat-card-header>
+      <mat-card-title class="movie-title"><strong>{{ movie.name }}</strong></mat-card-title>
+      <!-- <mat-card-title-group> -->
+      <!-- </mat-card-title-group> -->
+      <!-- <mat-card-subtitle></mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content style="display: flex; align-items: center;">
+      <img style="width: 300px; margin-right: 20px;" src={{movie.backgroundImage}}>
+      <p>{{ movie.synopsis }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="no-results" *ngIf="searchResults.length === 0 && searchTerm">
+  Não foram encontrados nenhum filme
+</div>

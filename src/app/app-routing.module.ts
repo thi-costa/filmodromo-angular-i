@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieLikedListComponent } from './components/movie-liked-list/movie-liked-list.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       import(
         './modules/movies/movie-registration/movie-registration.module'
       ).then((m) => m.MovieRegistrationModule),
+  },
+  {
+    path: 'movies/search',
+    component: MovieSearchComponent,
   },
   {
     path: 'movies/liked',
